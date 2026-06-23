@@ -15,25 +15,7 @@
 <nav class="navbar">
   <div class="nav-inner">
     <a href="#hero" class="nav-logo">
-      <!-- Логотип: вагон-дом + текст -->
-      <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="46" height="46" rx="10" fill="#E07D10"/>
-        <!-- корпус вагона -->
-        <rect x="5" y="18" width="36" height="16" rx="3" fill="white"/>
-        <!-- крыша -->
-        <path d="M8 18 L23 9 L38 18Z" fill="white" fill-opacity="0.85"/>
-        <!-- окна -->
-        <rect x="10" y="22" width="7" height="6" rx="1.5" fill="#0F2D5E"/>
-        <rect x="19.5" y="22" width="7" height="6" rx="1.5" fill="#0F2D5E"/>
-        <rect x="29" y="22" width="7" height="6" rx="1.5" fill="#0F2D5E"/>
-        <!-- дверь -->
-        <rect x="20" y="27" width="6" height="7" rx="1" fill="#0F2D5E" fill-opacity="0.5"/>
-        <!-- колёса -->
-        <circle cx="13" cy="35" r="3.5" fill="#1A4A8A" stroke="white" stroke-width="1.2"/>
-        <circle cx="33" cy="35" r="3.5" fill="#1A4A8A" stroke="white" stroke-width="1.2"/>
-        <!-- полоса снизу -->
-        <rect x="5" y="33" width="36" height="1.5" fill="#E07D10" fill-opacity="0.6"/>
-      </svg>
+      <img src="img/logo.png" alt="ВЗиС 89" height="48" style="border-radius:6px;background:#fff;padding:3px;">
       <span class="nav-logo-text">
         <span class="logo-main">ВЗиС&nbsp;89</span>
         <span class="logo-sub">Новый Уренгой · ЯНАО</span>
@@ -209,24 +191,16 @@
       <div class="carousel" id="carouselWagons">
         <div class="carousel-track" id="trackWagons">
           <div class="carousel-slide">
-            <img src="img/wagons/1.jpg" alt="Жилой вагон-дом" onerror="this.parentNode.innerHTML=placeholderSlide('Жилые вагон-дома')">
-            <div class="carousel-caption">Жилые вагон-дома для вахтового персонала</div>
+            <img src="img/wagons/1.jpg" alt="Вагон-дом снаружи">
+            <div class="carousel-caption">Вагон-дом — собственный парк 250+ единиц в Новом Уренгое</div>
           </div>
           <div class="carousel-slide">
-            <img src="img/wagons/2.jpg" alt="Вагон-столовая" onerror="this.parentNode.innerHTML=placeholderSlide('Вагоны-столовые')">
-            <div class="carousel-caption">Вагоны-столовые и кухни</div>
+            <img src="img/wagons/2.jpg" alt="Санузел в вагоне">
+            <div class="carousel-caption">Вагоны оснащены душевой, умывальником и водонагревателем</div>
           </div>
           <div class="carousel-slide">
-            <img src="img/wagons/3.jpg" alt="Вагон-баня" onerror="this.parentNode.innerHTML=placeholderSlide('Вагоны-бани и душевые')">
-            <div class="carousel-caption">Вагоны-бани и душевые</div>
-          </div>
-          <div class="carousel-slide">
-            <img src="img/wagons/4.jpg" alt="Офисный вагон" onerror="this.parentNode.innerHTML=placeholderSlide('Офисные и штабные вагоны')">
-            <div class="carousel-caption">Офисные и штабные вагоны</div>
-          </div>
-          <div class="carousel-slide">
-            <img src="img/wagons/5.jpg" alt="Вагон-медпункт" onerror="this.parentNode.innerHTML=placeholderSlide('Вагоны-медпункты')">
-            <div class="carousel-caption">Вагоны-медпункты</div>
+            <img src="img/wagons/3.jpg" alt="Штабной вагон внутри">
+            <div class="carousel-caption">Штабной вагон — офис прямо на объекте</div>
           </div>
         </div>
         <button class="carousel-btn prev" onclick="moveCarousel('wagons',-1)">&#8249;</button>
@@ -300,16 +274,16 @@
       <div class="carousel" id="carouselBase">
         <div class="carousel-track" id="trackBase">
           <div class="carousel-slide">
-            <img src="img/base/1.jpg" alt="Здание базы" onerror="this.parentNode.innerHTML=placeholderSlide('Здание №1 — 1 074 м²')">
-            <div class="carousel-caption">Здание №1 — склады и общежития, 1 074 м²</div>
+            <img src="img/base/1.jpg" alt="Здание базы снаружи">
+            <div class="carousel-caption">Производственная база — ул. Таёжная 165, Западная промзона</div>
           </div>
           <div class="carousel-slide">
-            <img src="img/base/2.jpg" alt="Тёплый гараж" onerror="this.parentNode.innerHTML=placeholderSlide('Тёплый гараж — 546 м²')">
-            <div class="carousel-caption">Отапливаемый гараж — 546 м²</div>
+            <img src="img/base/2.jpg" alt="Тёплый гараж">
+            <div class="carousel-caption">Отапливаемый гараж 546 м² — техника сохраняет рабочее состояние в −50°C</div>
           </div>
           <div class="carousel-slide">
-            <img src="img/base/3.jpg" alt="Открытая площадка" onerror="this.parentNode.innerHTML=placeholderSlide('Открытая стоянка — 4 000 м²')">
-            <div class="carousel-caption">Открытая площадка — 4 000 м²</div>
+            <img src="img/base/3.jpg" alt="Склад внутри">
+            <div class="carousel-caption">Крытый склад — большое незагромождённое пространство для хранения</div>
           </div>
         </div>
         <button class="carousel-btn prev" onclick="moveCarousel('base',-1)">&#8249;</button>
@@ -395,16 +369,16 @@
       <div class="carousel" id="carouselAccommodation">
         <div class="carousel-track" id="trackAccommodation">
           <div class="carousel-slide">
-            <img src="img/accommodation/1.jpg" alt="Номера хостела" onerror="this.parentNode.innerHTML=placeholderSlide('Номера хостела — 15 м²')">
-            <div class="carousel-caption">Комфортные номера 15 м² с санузлом</div>
+            <img src="img/accommodation/1.jpg" alt="Хостел снаружи">
+            <div class="carousel-caption">Хостел ООО «Сталькомплект» — до 300 мест для вахтового персонала</div>
           </div>
           <div class="carousel-slide">
-            <img src="img/accommodation/2.jpg" alt="Кафе" onerror="this.parentNode.innerHTML=placeholderSlide('Кафе — 55 посадочных мест')">
-            <div class="carousel-caption">Кафе на 55 мест — завтрак, обед, ужин</div>
+            <img src="img/accommodation/2.jpg" alt="Номер с двухъярусными кроватями">
+            <div class="carousel-caption">Номера с двухъярусными кроватями, ТВ и отоплением</div>
           </div>
           <div class="carousel-slide">
-            <img src="img/accommodation/3.jpg" alt="Холл хостела" onerror="this.parentNode.innerHTML=placeholderSlide('Хостел — до 300 человек')">
-            <div class="carousel-caption">Хостел вмещает до 300 человек</div>
+            <img src="img/accommodation/3.jpg" alt="Санузел в номере">
+            <div class="carousel-caption">Санузел с душем и умывальником в каждом блоке</div>
           </div>
         </div>
         <button class="carousel-btn prev" onclick="moveCarousel('accommodation',-1)">&#8249;</button>

@@ -63,7 +63,7 @@ function addSwipe(trackId, id) {
 
 // Init all carousels on load
 document.addEventListener('DOMContentLoaded', () => {
-  initCarousel('wagons', 5);
+  initCarousel('wagons', 3);
   initCarousel('base', 3);
   initCarousel('accommodation', 3);
 
