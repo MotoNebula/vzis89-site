@@ -532,6 +532,14 @@ footer {
   aspect-ratio: 16/7;
   max-height: 560px;
 }
+/* Вагон-дома: вертикальные фото — квадратный формат, без обрезки */
+#carouselWagons {
+  aspect-ratio: 1/1;
+  max-height: 680px;
+}
+#carouselWagons .carousel-slide img {
+  object-fit: contain;
+}
 .carousel-track {
   display: flex;
   height: 100%;
@@ -636,6 +644,7 @@ footer {
 @media (max-width: 640px) {
   /* Carousel taller on mobile for portrait photos */
   .carousel { aspect-ratio: 4/3; max-height: none; }
+  #carouselWagons { aspect-ratio: 3/4; max-height: none; }
 
   /* Phone number: icon only → slide in on tap */
   .nav-phone { position: relative; overflow: hidden; }
