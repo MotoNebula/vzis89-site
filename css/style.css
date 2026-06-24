@@ -530,7 +530,7 @@ footer {
   overflow: hidden;
   background: #0F2D5E;
   aspect-ratio: 16/7;
-  max-height: 420px;
+  max-height: 560px;
 }
 .carousel-track {
   display: flex;
@@ -632,6 +632,28 @@ footer {
   .service-content { grid-template-columns: 1fr; gap: 32px; }
   .service-content.reverse { direction: ltr; }
   .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 640px) {
+  /* Carousel taller on mobile for portrait photos */
+  .carousel { aspect-ratio: 4/3; max-height: none; }
+
+  /* Phone number: icon only → slide in on tap */
+  .nav-phone { position: relative; overflow: hidden; }
+  .nav-phone .phone-text {
+    display: inline-block;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+    transition: max-width 0.35s ease, opacity 0.25s ease;
+  }
+  .nav-phone.expanded .phone-text,
+  .nav-phone:hover .phone-text {
+    max-width: 180px;
+    opacity: 1;
+  }
+  .nav-phone .phone-icon { font-size: 20px; }
 }
 @media (max-width: 600px) {
   section { padding: 56px 16px; }
