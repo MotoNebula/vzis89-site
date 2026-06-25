@@ -16,7 +16,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif;
   color: var(--text);
   background: var(--white);
   font-size: 16px;
@@ -471,6 +471,27 @@ section { padding: 80px 24px; }
   font-family: inherit;
 }
 .btn-submit:hover { background: #C86E08; }
+.form-consent { margin-top: -4px; }
+.consent-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  color: #A8C4E8;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.consent-label input[type="checkbox"] {
+  width: auto;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: var(--orange);
+  cursor: pointer;
+}
+.consent-label a { color: var(--orange-light); }
 .contact-info {}
 .company-card {
   background: rgba(255,255,255,0.06);

@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Аренда вагон-домов, производственных баз, проживание и питание в Новом Уренгое. 250+ вагонов, до 300 мест. ИП Фракина, ООО Сталькомплект." />
   <title>ВЗиС 89 — Аренда вагон-домов и базы в Новом Уренгое</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -401,6 +399,14 @@
             <label>Комментарий</label>
             <textarea name="message" placeholder="Сроки, количество вагонов, дополнительные требования..."></textarea>
           </div>
+          <div class="form-group form-consent">
+            <label class="consent-label">
+              <input type="checkbox" name="consent" id="consentCheck" required />
+              <span>Я согласен(на) на обработку персональных данных в соответствии с
+                <a href="privacy.html" target="_blank">Политикой конфиденциальности</a>
+              </span>
+            </label>
+          </div>
           <button type="submit" class="btn-submit">Отправить заявку →</button>
         </form>
         <div class="form-success" id="formSuccess">
@@ -474,7 +480,8 @@
     </p>
     <p style="margin-top:6px; color:#2E4A6A;">
       © 2025 vzis89.ru · Все права защищены ·
-      <a href="privacy.html">Политика конфиденциальности</a>
+      <a href="privacy.html">Политика конфиденциальности</a> ·
+      <a href="terms.html">Пользовательское соглашение</a>
     </p>
   </div>
 </footer>
@@ -483,8 +490,8 @@
 <div class="cookie-banner" id="cookieBanner" role="alertdialog" aria-label="Уведомление об использовании cookie">
   <div class="cookie-inner">
     <p>
-      Сайт использует файлы cookie и Яндекс.Метрику для анализа посещаемости.
-      Персональные данные не передаются.
+      Сайт использует файлы cookie и Яндекс.Метрику для анализа посещаемости. Персональные данные не передаются.
+      <a href="privacy.html#cookie">Условия использования cookie</a> ·
       <a href="privacy.html">Политика конфиденциальности</a>
     </p>
     <button class="cookie-btn" id="cookieAccept">Принять и закрыть</button>
