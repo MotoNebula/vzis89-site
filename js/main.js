@@ -1,3 +1,16 @@
+// ---- Yandex Metrika: init only after cookie consent ----
+function initMetrika() {
+  if (window._metrikaInited) return;
+  window._metrikaInited = true;
+  (function(m,e,t,r,i,k,a){
+    m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+    k=e.createElement(t);a=e.getElementsByTagName(t)[0];k.async=1;k.src=r;a.parentNode.insertBefore(k,a);
+  })(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=110136163','ym');
+  ym(110136163,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true});
+}
+
 // ---- Image lists for carousels ----
 const GALLERY = {
   wagons: [
@@ -157,12 +170,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const banner = document.getElementById('cookieBanner');
   const acceptBtn = document.getElementById('cookieAccept');
   if (banner && acceptBtn) {
-    if (!localStorage.getItem('cookie_consent')) {
+    if (localStorage.getItem('cookie_consent')) {
+      initMetrika();
+    } else {
       banner.style.display = 'block';
     }
     acceptBtn.addEventListener('click', function () {
       localStorage.setItem('cookie_consent', '1');
       banner.style.display = 'none';
+      initMetrika();
     });
   }
 
@@ -172,9 +188,26 @@ document.addEventListener('DOMContentLoaded', () => {
   burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
 
-  // Contact form
+  // Contact form — открывает почтовый клиент с заполненными данными
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
+    const data = new FormData(this);
+    const services = {
+      wagons: 'Аренда вагон-домов',
+      base: 'Аренда производственной базы',
+      accommodation: 'Проживание и питание',
+      all: 'Комплексное размещение'
+    };
+    const service = services[data.get('service')] || data.get('service');
+    const body = [
+      'Имя: ' + (data.get('name') || '—'),
+      'Компания: ' + (data.get('company') || '—'),
+      'Телефон: ' + (data.get('phone') || '—'),
+      'Услуга: ' + service,
+      'Комментарий: ' + (data.get('message') || '—')
+    ].join('\n');
+    const subject = 'Запрос с сайта vzis89.ru — ' + service;
+    window.location.href = 'mailto:vzis.yanao@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     this.style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';
   });
