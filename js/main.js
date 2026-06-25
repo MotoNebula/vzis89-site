@@ -1,9 +1,3 @@
-// ---- Cookie consent ----
-function acceptCookies() {
-  localStorage.setItem('cookie_consent', '1');
-  document.getElementById('cookieBanner').classList.remove('show');
-}
-
 // ---- Image lists for carousels ----
 const GALLERY = {
   wagons: [
@@ -160,8 +154,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Cookie banner
-  if (!localStorage.getItem('cookie_consent')) {
-    document.getElementById('cookieBanner').classList.add('show');
+  const banner = document.getElementById('cookieBanner');
+  const acceptBtn = document.getElementById('cookieAccept');
+  if (banner && acceptBtn) {
+    if (!localStorage.getItem('cookie_consent')) {
+      banner.style.display = 'block';
+    }
+    acceptBtn.addEventListener('click', function () {
+      localStorage.setItem('cookie_consent', '1');
+      banner.style.display = 'none';
+    });
   }
 
   // Mobile menu
