@@ -1,3 +1,9 @@
+// ---- Cookie consent ----
+function acceptCookies() {
+  localStorage.setItem('cookie_consent', '1');
+  document.getElementById('cookieBanner').classList.remove('show');
+}
+
 // ---- Image lists for carousels ----
 const GALLERY = {
   wagons: [
@@ -152,6 +158,11 @@ document.addEventListener('DOMContentLoaded', () => {
     addSwipe('track' + cap(id), id);
     setInterval(() => moveCarousel(id, 1), 5000);
   });
+
+  // Cookie banner
+  if (!localStorage.getItem('cookie_consent')) {
+    document.getElementById('cookieBanner').classList.add('show');
+  }
 
   // Mobile menu
   const burger = document.getElementById('burger');
